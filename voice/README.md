@@ -6,7 +6,7 @@ requests clips in that list, so nothing 404s and it plays fine with no clips at 
 
 ## Regenerate the clips (ElevenLabs)
 
-Voice: **Jessica** (not Hope or Jessica, which other games in this house already use). Settings: stability 50, similarity 75.
+Voice: **Jessica** (playful, bright, warm; not Hope, which Word Hunter already uses). Settings: stability 50, similarity 75.
 
 1. Open ElevenLabs Text to Speech, pick Jessica, set stability 50 and similarity 75.
 2. Paste the lines from `lines.json` in order, one per paragraph, separated by `<break time="1.3s" />`. One-liner to build the text:
