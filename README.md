@@ -8,7 +8,9 @@ Vanilla HTML/CSS/JS, no build step. All art is drawn in code; sound effects are 
 
     cd boomtown && python3 -m http.server 8781
 
-Open http://localhost:8781/ (add `?test=1` for the test panel). On the iPad: open the hosted copy in Safari and Add to Home Screen. It also runs from GitHub Pages as static files.
+Open http://localhost:8781/ (add `?test=1` for the test panel).
+
+Live copy: https://jaybeatty1079.github.io/boomtown/ (GitHub Pages from `main`). On the iPad: open that link in Safari, tap Share, then Add to Home Screen. Every push to `main` goes live in about a minute; bump `version.txt` and the `.ver` footer together so open copies reload themselves.
 
 ## Test it
 
