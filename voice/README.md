@@ -9,18 +9,19 @@ requests clips in that list, so nothing 404s and it plays fine with no clips at 
 Voice: **Jessica** (playful, bright, warm; not Hope, which Word Hunter already uses). Settings: stability 50, similarity 75.
 
 1. Open ElevenLabs Text to Speech, pick Jessica, set stability 50 and similarity 75.
-2. Paste the lines from `lines.json` in order, one per paragraph, separated by `<break time="1.3s" />`. One-liner to build the text:
+2. Paste the lines from `lines.json` in order, one per line. (Eleven v4 in the web app ignored `<break>` tags on 2026-11-16: the
+   pauses between lines came out as short as the pauses inside a line, about 0.4 s, so do not count on tags for spacing.)
+3. Generate once and download the mp3 (about 1,700 characters; the app made two takes and charged 900 credits).
+4. Cut it into clips and check them:
 
-       python3 -c "import json; print(' <break time=\"1.3s\" /> '.join(json.load(open('voice/lines.json')).values()))" | pbcopy
+       python3 -I voice/align.py ~/Downloads/<the ElevenLabs mp3>
+       python3 -I voice/verify.py
 
-3. Generate once and download the mp3 (the whole script is about 40 lines; one generation fits the starter plan).
-4. Split it into clips:
-
-       python3 voice/split.py ~/Downloads/boomtown-voice.mp3
-
-   It finds the pauses with ffmpeg (`~/bin/ffmpeg`), cuts at their midpoints, trims the edges, writes one 64 kbps AAC `.m4a` per key
-   plus `clips.json`, and stops with a clear error if the number of pieces does not match `lines.json` (then adjust the min-silence
-   or threshold arguments). Hand-made clips: add their keys to `clips.json` yourself.
+   `align.py` finds every short silence with ffmpeg (`~/bin/ffmpeg`) and picks the 39 cuts that best fit each line's length, so a
+   pause inside a line is not taken for the gap between lines; it writes one 64 kbps AAC `.m4a` per key plus `clips.json`.
+   `verify.py` has Gemini (key in `~/.config/gemini/key`) transcribe every clip and compares it with `lines.json`; fix any
+   MISMATCH by re-cutting that clip at the right silence (the first run on 2026-11-16 needed the last four re-cut by hand).
+   `split.py` is the older silence-only splitter and only works when the gaps between lines are clearly longer than the ones inside.
 
 5. Reload the game: `BT.voice.say('payday')` in the console should talk.
 
