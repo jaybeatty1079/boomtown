@@ -183,7 +183,7 @@ BT.town = BT.town || {};
     BT.log.event('town_place', { id: id, r: r, c: c, price: it.price });
     BT.save();
     if (it.price) BT.coinFly(fromEl);
-    BT.sfx.build();
+    BT.sfx.build(); BT.voice.say('nicebuild');
     return true;
   }
   function pickup(r, c) {
@@ -372,7 +372,12 @@ BT.town = BT.town || {};
     shell = screen;
   }
 
-  document.addEventListener('bt:screen', function (e) { if (e.detail.id === 'town') { moving = null; render(); } });
+  var townSaid = false; // 'town' once per launch
+  document.addEventListener('bt:screen', function (e) {
+    if (e.detail.id !== 'town') return;
+    moving = null; render();
+    if (!townSaid) { townSaid = true; BT.voice.say('town'); }
+  });
 
   Object.assign(BT.town, {
     catalog: CATALOG, byId: BY_ID, palette: PALETTE,

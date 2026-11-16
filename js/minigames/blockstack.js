@@ -70,6 +70,7 @@
       size();
       game.init(W, H, state);
       window.addEventListener('resize', size);
+      BT.voice.say('countdown');
 
       function pos(e) { var r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
       function onDown(e) {
@@ -139,6 +140,7 @@
         var raw = Math.max(0, Math.round(game.payFor(state.score, ctx)));
         var pay = ctx.cap == null ? raw : Math.min(ctx.cap, raw);
         BT.sfx.fanfare();
+        BT.voice.say('timesup', { interrupt: true }); BT.voice.say('collect'); // the end card shows right here
         var card = BT.el('div', { class: 'card mg-end', style: { position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)',
           textAlign: 'center', minWidth: '260px', padding: '22px 26px', zIndex: 2 } }, [
           BT.el('h2', { text: "Time's up!" }),

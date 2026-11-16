@@ -75,6 +75,7 @@
       el('div', { class: 'btn-row', style: { marginTop: '14px' } }, [
         el('button', { class: 'btn btn-big gold', type: 'button', text: 'Clock in', onclick: function () {
           BT.sfx.click(); m.remove();
+          BT.voice.say('clockin');
           BT.log.event('job_pick', { jobId: job.id, level: lvl });
           if (BT.session && typeof BT.session.start === 'function') BT.session.start(job);
           else BT.toast('The work day opens soon', 'info');

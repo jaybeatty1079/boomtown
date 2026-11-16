@@ -95,7 +95,7 @@ window.BT = window.BT || {};
       rounds: [],
       events: [],
       sessions: [],
-      settings: { sound: true, parentCode: null }
+      settings: { sound: true, music: true, voice: true, parentCode: null }
     };
   }
   BT.defaults = defaults;

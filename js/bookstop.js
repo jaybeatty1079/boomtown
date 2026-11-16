@@ -96,7 +96,7 @@
       var r = submit({ title: title.value, pages: pagesVal, line: line.value });
       if (typeof r === 'string') { BT.toast(r, 'bad'); return; }
       stopTimer();
-      BT.sfx.good(); BT.coinFly(done);
+      BT.sfx.good(); BT.coinFly(done); BT.voice.say('booksaved');
       BT.toast('Book saved! +' + BT.fmt(PAY), 'good');
       BT.wait(700).then(function () { go(next); });
     });
@@ -126,7 +126,8 @@
     ]));
     refresh();
     BT.screen.show('bookstop', { form: true });
-    BT.bookstop.form = { title: title, line: line, setPages: setPages, done: done, refresh: refresh };
+    BT.voice.say('bookstop');
+    BT.bookstop.form ={ title: title, line: line, setPages: setPages, done: done, refresh: refresh };
   }
 
   function openShelf(opts) {

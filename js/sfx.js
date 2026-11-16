@@ -38,6 +38,7 @@
 
   BT.sfx = {
     unlock: unlock,
+    get ctx() { return ctx; }, // music.js hangs its gain nodes on the same context
     good: play(function () { tone(523, 'square', 0, 0.12, 0.15); tone(784, 'square', 0.1, 0.18, 0.15); }),
     bad: play(function () { tone(220, 'sawtooth', 0, 0.25, 0.12, 110); }),
     coin: play(function () { tone(1320, 'square', 0, 0.07, 0.12); tone(1760, 'square', 0.07, 0.16, 0.12); }),

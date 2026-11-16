@@ -94,6 +94,10 @@ assert(rounds === 6 || rounds === 7, 'rounds logged: ' + rounds);
 assert(await ev(() => BT.state.money) > money0, 'money went up');
 assert(await ev(() => BT.state.sessions.length) === 1, 'one session logged');
 assert(await ev(() => BT.state.events.some(e => e.type === 'break_played')), 'break played logged');
+const spoken = await ev(() => BT.test.spoken.slice());
+assert(spoken.filter(k => /^round_/.test(k)).length === 6, 'six round_* voice keys, got ' + spoken.filter(k => /^round_/.test(k)).length);
+for (const k of ['home', 'clockin', 'break', 'countdown', 'timesup', 'onemore', 'payday']) assert(spoken.includes(k), 'voice said ' + k);
+assert(await ev(() => BT.music.current) === null, 'payday is silent');
 
 // 4. book stop
 await clickText('#screen-payday button', 'Book Stop');
@@ -105,6 +109,7 @@ await shot('bookstop');
 await page.click('#screen-bookstop .btn-big');
 await waitScreen('town');
 assert(await ev(() => BT.state.books.length) === 1, 'book saved');
+for (const k of ['bookstop', 'booksaved', 'town']) assert(await ev(x => BT.test.spoken.includes(x), k), 'voice said ' + k);
 
 // 5. town: three trees
 await ev(() => BT.town.select('tree'));
@@ -120,6 +125,7 @@ await page.click('#screen-shop [data-tab="wheels"]');
 await page.click('#screen-shop [data-buy="bike"]');
 await sleep(50);
 assert(await ev(() => BT.state.vehicles.includes('bike')), 'bike bought');
+assert(await ev(() => BT.test.spoken.includes('sold') && BT.test.spoken.includes('nicebuild')), 'voice said sold and nicebuild');
 await shot('shop');
 
 // 7. parent report with a code

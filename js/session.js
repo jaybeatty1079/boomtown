@@ -155,9 +155,10 @@
       if (BT.TEST) BT.wait(0).then(function () { ok.click(); });
     });
   }
-  function flash(res, earned) {
+  function flash(res, earned, subject) {
     var root = BT.screen.el('round');
     var kind = res.correct === true ? 'good' : res.correct === false ? 'bad' : 'done';
+    if (kind === 'good' && subject !== 'reading') BT.voice.say(BT.pick(['correct', 'nice', 'gotit', 'brilliant']), { interrupt: true });
     var title = kind === 'good' ? (res.retry ? 'Got it on the retry!' : 'Correct!') : kind === 'bad' ? 'Not this time' : res.skipped ? 'Skipped' : 'Nice work!';
     var next = el('button', { class: 'btn gold', type: 'button', text: 'Next' });
     var box = el('div', { class: 'bt-overlay bt-flash ' + kind }, el('div', { class: 'card' }, [
@@ -193,12 +194,21 @@
         el('span', { class: 'pill sky', text: (def.icon ? def.icon + ' ' : '') + def.title }),
         el('span', { class: 'pill gold', text: BT.fmt(pay) })
       ]),
-      el('span', { class: 'pill ' + (voluntary ? 'violet' : 'mint'), text: voluntary ? 'Bonus round' : 'Round ' + (index + 1) + ' of ' + ROUNDS })
+      el('div', { class: 'row' }, [
+        el('span', { class: 'pill ' + (voluntary ? 'violet' : 'mint'), text: voluntary ? 'Bonus round' : 'Round ' + (index + 1) + ' of ' + ROUNDS }),
+        // reads the live .question only: for reading rounds that is the current question, never the passage
+        el('button', { class: 'btn btn-sm violet readit', type: 'button', text: '🔊 Read it', 'aria-label': 'Read the question aloud', onclick: function () {
+          var q = container.querySelector('.question');
+          if (q) BT.voice.read(q.textContent);
+        } })
+      ])
     ]));
     root.appendChild(container);
-    BT.screen.show('round', { subject: subject, job: S.job });
+    BT.screen.show('round', { subject: subject, job: S.job }); // music.js fades the music out when subject is 'reading'
+    if (!voluntary) BT.voice.say('round_' + subject);
     BT.test.roundHooks = null;
     var hints = 0, explains = 0, t0 = performance.now(), settled = false;
+    var quiet = subject === 'reading'; // no voice while she reads the passage
     return new Promise(function (resolve) {
       function finish(res) { if (settled) return; settled = true; resolve(res); }
       var ctx = {
@@ -207,9 +217,14 @@
           hints++;
           BT.log.event('hint', { subject: subject, jobId: S.job.id, cost: hintCost(pay) });
           BT.toast('Hint used: ' + BT.fmt(hintCost(pay)) + ' off this round', 'info');
+          if (!quiet) BT.voice.say('hint');
         },
         // rounds explain on both misses and end after the second, so the second panel (or {final:true}) says 'Got it'
-        explain: function (text, opts) { explains++; return explainPanel(container, text, !!(opts && opts.final) || explains > 1); },
+        explain: function (text, opts) {
+          explains++;
+          if (!quiet) BT.voice.say('why', { interrupt: true });
+          return explainPanel(container, text, !!(opts && opts.final) || explains > 1);
+        },
         done: finish
       };
       var p;
@@ -227,7 +242,7 @@
       if (res.correct === true) S.right++;
       BT.log.round({ subject: subject, jobId: S.job.id, jobLevel: S.jobLevel, level: level, correct: res.correct, ms: res.ms,
         hints: res.hints, voluntary: !!voluntary, retry: res.retry, answer: res.answer });
-      return flash(res, earned.pay + earned.bonus).then(function () { return subject; });
+      return flash(res, earned.pay + earned.bonus, subject).then(function () { return subject; });
     });
   }
 
@@ -238,6 +253,7 @@
     var root = BT.screen.el('break');
     var cap = breakCap(ROUNDS * S.pay);
     BT.screen.show('break', { id: id });
+    BT.voice.say('break');
     return new Promise(function (resolve) {
       offerCard(root, [
         el('h2', { text: 'Break time!' }),
@@ -277,6 +293,7 @@
     var bonus = S.pay + Math.round(S.pay * 0.2);
     BT.log.event('replay_offered', { subject: subject, jobId: S.job.id });
     var root = BT.screen.el('round');
+    BT.voice.say('onemore');
     return new Promise(function (resolve) {
       offerCard(root, [
         el('div', { class: 'bt-icon', text: def.icon || '⭐' }),
@@ -340,6 +357,12 @@
     root.appendChild(el('div', { class: 'bt-payday' }, card));
     BT.screen.show('payday', { total: total });
     BT.confetti(); BT.sfx.fanfare(); BT.coinFly(card);
+    BT.voice.say('payday');
+    BT.wait(1200).then(function () { // the notices, after the fanfare: at most one playing and two waiting
+      if (streakBonus > 0) BT.voice.say('streak');
+      if (promoted) BT.voice.say('promoted');
+      if (newTier) BT.voice.say('unlocked');
+    });
     BT.save();
   }
 
@@ -348,6 +371,7 @@
     hideBanner();
     var b = el('div', { class: 'bt-banner', id: 'bt-banner', text: 'Good stopping point! (tap to hide)', onclick: hideBanner });
     document.body.appendChild(b);
+    BT.voice.say('stopping');
     return b;
   }
   function hideBanner() { var b = document.getElementById('bt-banner'); if (b) b.remove(); }

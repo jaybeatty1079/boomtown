@@ -206,3 +206,6 @@ label.field { display: block; font-weight: 700; margin: 6px 0 4px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Read-aloud pill in the round header (session.js), same size as the Hint pill */
+.btn.readit { min-width: 44px; min-height: 44px; margin-bottom: 0; }

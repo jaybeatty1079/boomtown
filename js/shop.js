@@ -111,7 +111,7 @@
     if (kind === 'homes' && shop.homes.indexOf(item) !== shop.homeIndex() + 1) { BT.toast('Move up one home at a time', 'info'); return false; }
     if (!BT.money.spend(item.price, 'shop:' + kind + ':' + id)) {
       BT.toast('Not enough money yet. You need ' + BT.fmt(item.price - BT.money.get()) + ' more.', 'bad');
-      BT.sfx.bad();
+      BT.sfx.bad(); BT.voice.say('notenough');
       return false;
     }
     var s = BT.state;
@@ -124,6 +124,7 @@
     BT.save();
     BT.sfx.coin();
     if (fromEl) BT.coinFly(fromEl);
+    BT.voice.say(kind === 'vacations' ? 'vacation' : kind === 'homes' ? 'newhome' : 'sold');
     if (kind === 'vacations') shop.postcard(item);
     else { BT.sfx.good(); BT.toast(item.title + ' is yours!', 'good'); }
     if (BT.screen.current === 'shop') shop.render();

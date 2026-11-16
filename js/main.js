@@ -64,7 +64,12 @@
     document.querySelectorAll('.home-nav [data-go]').forEach(function (b) {
       b.addEventListener('click', function () { go(b.dataset.go); });
     });
-    document.addEventListener('bt:screen', function (e) { if (e.detail.id === 'home') renderHome(); });
+    var homeSaid = false; // 'home' once per launch, the first time home shows with a character
+    document.addEventListener('bt:screen', function (e) {
+      if (e.detail.id !== 'home') return;
+      renderHome();
+      if (!homeSaid && BT.state.character) { homeSaid = true; BT.voice.say('home'); }
+    });
     document.addEventListener('bt:hud', function () { if (BT.screen.current === 'home') renderHome(); });
   }
 
@@ -112,7 +117,7 @@
     wireParentButton();
     if (BT.TEST) testPanel();
     if (BT.state.character && BT.state.character.name) BT.screen.show('home');
-    else showCharacter();
+    else { showCharacter(); BT.voice.say('welcome'); }
   }
 
   BT.main = { boot: boot, renderHome: renderHome, showCharacter: showCharacter, go: go, dayNumber: dayNumber, localDay: localDay };

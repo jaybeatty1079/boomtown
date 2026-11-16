@@ -17,12 +17,20 @@
     root.innerHTML = '';
     var s = BT.state.settings;
 
-    var soundSwitch = el('div', { class: 'switch' + (s.sound ? ' on' : ''), role: 'switch', 'aria-checked': String(!!s.sound),
-      onclick: function () { // click, not pointerdown: a finger that starts a scroll on the switch must not flip it
-        s.sound = !s.sound; BT.save();
-        soundSwitch.classList.toggle('on', s.sound); soundSwitch.setAttribute('aria-checked', String(s.sound));
-        if (s.sound) BT.sfx.click();
-      } }, [el('span', { class: 'track' }), el('span', { text: 'Sound effects' })]);
+    // click, not pointerdown: a finger that starts a scroll on the switch must not flip it
+    function makeSwitch(label, key, after) {
+      var sw = el('div', { class: 'switch' + (s[key] !== false ? ' on' : ''), role: 'switch', 'aria-checked': String(s[key] !== false),
+        onclick: function () {
+          s[key] = s[key] === false; BT.save();
+          sw.classList.toggle('on', s[key]); sw.setAttribute('aria-checked', String(s[key]));
+          if (s[key]) BT.sfx.click();
+          after(s[key]);
+        } }, [el('span', { class: 'track' }), el('span', { text: label })]);
+      return sw;
+    }
+    var soundSwitch = makeSwitch('Sound effects', 'sound', function (on) { BT.music.refresh(); if (!on) BT.voice.stop(); });
+    var musicSwitch = makeSwitch('Music', 'music', function (on) { BT.music.setEnabled(on); });
+    var voiceSwitch = makeSwitch('Voice lines', 'voice', function (on) { BT.voice.setEnabled(on); });
 
     // save code
     var codeBox = el('textarea', { class: 'input', readonly: '', rows: 3, 'aria-label': 'Save code', style: { display: 'none', fontSize: '12px', minHeight: '70px' } });
@@ -81,7 +89,7 @@
       el('button', { class: 'btn btn-sm stone', type: 'button', text: 'Back', onclick: function () { BT.sfx.click(); BT.screen.show('home'); } })
     ]));
     root.appendChild(el('div', { class: 'panel stack' }, [
-      el('div', { class: 'card' }, [el('h3', { text: 'Sound' }), soundSwitch]),
+      el('div', { class: 'card stack' }, [el('h3', { text: 'Sound' }), soundSwitch, musicSwitch, voiceSwitch]),
       el('div', { class: 'card' }, [el('h3', { text: 'Character' }), editChar]),
       el('div', { class: 'card' }, [
         el('h3', { text: 'Save code' }),
@@ -115,6 +123,15 @@
       var a = BT.state.settings.sound === was;
       sw.click(); var b = BT.state.settings.sound === !was;
       sw.click(); return a && b && BT.state.settings.sound === was;
+    } },
+    { name: 'music and voice switches toggle their settings and the modules', fn: function () {
+      render();
+      var sws = BT.screen.el('settings').querySelectorAll('.switch'), m = BT.state.settings.music, v = BT.state.settings.voice;
+      if (sws.length !== 3) return false;
+      sws[1].click(); var a = BT.state.settings.music === !m && BT.music.enabled() === !m;
+      sws[2].click(); var b = BT.state.settings.voice === !v && BT.voice.enabled() === !v;
+      sws[1].click(); sws[2].click();
+      return a && b && BT.state.settings.music === m && BT.state.settings.voice === v;
     } },
     { name: 'clear parent code needs a hold: tap does not clear', fn: function () {
       var keep = BT.state.settings.parentCode; BT.state.settings.parentCode = '1234'; render();

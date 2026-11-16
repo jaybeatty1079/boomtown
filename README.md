@@ -2,7 +2,7 @@
 
 A learning game for a 4th grader on an iPad. She makes a character, picks a home state on a block map of the USA and takes a job somewhere in the country each day (a bakery in Austin, a vet clinic in Denver). A work day is six or seven short rounds the game chooses (reading, words, writing, money, logic, geography, science, design), optional break games, then payday. Money buys town tiles, a bigger home, wheels, outfits and vacations; returning to a job earns a promotion with harder rounds and better pay. Every day ends at the Book Stop: log a real book and write one line about it. Behind a parent code sits a report on how she is doing by subject.
 
-Vanilla HTML/CSS/JS, no build step. All art is drawn in code and all sound is synthesized. `SPEC.md` is the full contract.
+Vanilla HTML/CSS/JS, no build step. All art is drawn in code; sound effects are synthesized, with three CC0 music loops and optional voice clips on top. `SPEC.md` is the full contract.
 
 ## Run it locally
 
@@ -51,6 +51,13 @@ Fields: id, title, city, state abbreviation, tier 1-4, pay, kind, focus subjects
       'Mercury orbits closest to the Sun, about 36 million miles away on average.');
 
 Arguments: id (unique, gets a `sci-` prefix), level 1-5, topic (one of the labels in `js/rounds/science.js`), question, four options with the correct one first (the round shuffles them), why, optional figure name.
+
+## Music and voice
+
+- Music (`js/music.js`, `BT.music`): three looping CC0 tracks in `music/`, credits in `music/CREDITS.md`. `calm` (forest-8bit) on home, character, jobs, town, shop, Book Stop and settings; `work` (mountain-stage) on rounds, faded out for reading rounds; `break` (action-1) on break games; silence on payday and the report. Starts on the first tap (iPad rule), ramps between tracks, ducks under voice lines, pauses when the app is hidden.
+- Voice lines (`js/voice.js`, `BT.voice`): `voice/lines.json` has the 40 lines, the clips are `voice/<key>.m4a`, and `voice/clips.json` lists which exist (only those are ever requested), so the game is fine without them. The 🔊 **Read it** button on every round reads the question with the iPad's speech voice.
+- Settings → Sound: **Sound effects**, **Music**, **Voice lines** switches (`settings.sound / music / voice`).
+- Regenerate the clips: ElevenLabs voice **Jessica**, stability 50, similarity 75; paste the lines from `voice/lines.json` in order separated by `<break time="1.3s" />`, download the mp3, then `python3 voice/split.py <mp3>`. Details in `voice/README.md`.
 
 ## Save, parent code and report
 

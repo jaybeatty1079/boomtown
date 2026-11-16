@@ -37,6 +37,7 @@ BT.minigames = BT.minigames || {};
     if (ro) ro.observe(wrap); else window.addEventListener('resize', resize);
 
     var done = false, resolveP, raf = 0, last = 0, countdown = 3.999, finished = false;
+    if (container.isConnected) BT.voice.say('countdown'); // a detached host (checks) stays quiet
     function pos(e) { var r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
     function onDown(e) { if (!api.running) return; e.preventDefault(); var p = pos(e); if (game.onDown) game.onDown(p.x, p.y, api); }
     function onMove(e) { if (!api.running) return; var p = pos(e); if (game.onMove) game.onMove(p.x, p.y, api); }
@@ -94,6 +95,7 @@ BT.minigames = BT.minigames || {};
       ]);
       wrap.appendChild(card);
       sfx('fanfare');
+      BT.voice.say('timesup', { interrupt: true }); BT.voice.say('collect');
       if (BT.TEST) setTimeout(finish, 400); // test mode: no waiting on the card
     }
     function finish() {
