@@ -1,0 +1,221 @@
+- generic [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - banner [ref=f2e3]:
+      - generic [ref=f2e4]: Boomtown
+      - generic [ref=f2e13]:
+        - generic "Money" [ref=f2e14]: $0
+        - generic "Day streak" [ref=f2e15]: 1 day
+        - button "Parent report (hold)" [ref=f2e16] [cursor=pointer]: Parent
+    - main [ref=f2e17]:
+      - generic [ref=f2e774]:
+        - generic [ref=f2e775]:
+          - button "Town name, tap to edit" [ref=f2e776] [cursor=pointer]: Testerville ✎
+          - generic [ref=f2e777]: Pop. 3
+          - generic [ref=f2e778]: Value $0
+          - button "Paint" [ref=f2e779] [cursor=pointer]
+          - button "Shop" [ref=f2e780] [cursor=pointer]
+          - button "Home" [ref=f2e781] [cursor=pointer]
+        - generic [ref=f2e782]:
+          - img "Your town" [ref=f2e784]:
+            - generic [ref=f2e1117] [cursor=pointer]
+            - generic [ref=f2e1118] [cursor=pointer]
+            - generic [ref=f2e1119] [cursor=pointer]
+            - generic [ref=f2e1120] [cursor=pointer]
+            - generic [ref=f2e1121] [cursor=pointer]
+            - generic [ref=f2e1122] [cursor=pointer]
+            - generic [ref=f2e1123] [cursor=pointer]
+            - generic [ref=f2e1124] [cursor=pointer]
+            - generic [ref=f2e1125] [cursor=pointer]
+            - generic [ref=f2e1126] [cursor=pointer]
+            - generic [ref=f2e1127] [cursor=pointer]
+            - generic [ref=f2e1128] [cursor=pointer]
+            - generic [ref=f2e1129] [cursor=pointer]
+            - generic [ref=f2e1130] [cursor=pointer]
+            - generic [ref=f2e1131] [cursor=pointer]
+            - generic [ref=f2e1132] [cursor=pointer]
+            - generic [ref=f2e1133] [cursor=pointer]
+            - generic [ref=f2e1134] [cursor=pointer]
+            - generic [ref=f2e1135] [cursor=pointer]
+            - generic [ref=f2e1136] [cursor=pointer]
+            - generic [ref=f2e1137] [cursor=pointer]
+            - generic [ref=f2e1138] [cursor=pointer]
+            - generic [ref=f2e1139] [cursor=pointer]
+            - generic [ref=f2e1140] [cursor=pointer]
+            - generic [ref=f2e1141] [cursor=pointer]
+            - generic [ref=f2e1142] [cursor=pointer]
+            - generic [ref=f2e1143] [cursor=pointer]
+            - generic [ref=f2e1144] [cursor=pointer]
+            - generic [ref=f2e1145] [cursor=pointer]
+            - generic [ref=f2e1146] [cursor=pointer]
+            - generic [ref=f2e1147] [cursor=pointer]
+            - generic [ref=f2e1148] [cursor=pointer]
+            - generic [ref=f2e1149] [cursor=pointer]
+            - generic [ref=f2e1150] [cursor=pointer]
+            - generic [ref=f2e1151] [cursor=pointer]
+            - generic [ref=f2e1152] [cursor=pointer]
+            - generic [ref=f2e1153] [cursor=pointer]
+            - generic [ref=f2e1154] [cursor=pointer]
+            - generic [ref=f2e1155] [cursor=pointer]
+            - generic [ref=f2e1156] [cursor=pointer]
+            - generic [ref=f2e1157] [cursor=pointer]
+            - generic [ref=f2e1158] [cursor=pointer]
+            - generic [ref=f2e1159] [cursor=pointer]
+            - generic [ref=f2e1160] [cursor=pointer]
+            - generic [ref=f2e1161] [cursor=pointer]
+            - generic [ref=f2e1162] [cursor=pointer]
+            - generic [ref=f2e1163] [cursor=pointer]
+            - generic [ref=f2e1164] [cursor=pointer]
+            - generic [ref=f2e1165] [cursor=pointer]
+            - generic [ref=f2e1166] [cursor=pointer]
+            - generic [ref=f2e1167] [cursor=pointer]
+            - generic [ref=f2e1168] [cursor=pointer]
+            - generic [ref=f2e1169] [cursor=pointer]
+            - generic [ref=f2e1170] [cursor=pointer]
+            - generic [ref=f2e1171] [cursor=pointer]
+            - generic [ref=f2e1172] [cursor=pointer]
+            - generic [ref=f2e1173] [cursor=pointer]
+            - generic [ref=f2e1174] [cursor=pointer]
+            - generic [ref=f2e1175] [cursor=pointer]
+            - generic [ref=f2e1176] [cursor=pointer]
+            - generic [ref=f2e1177] [cursor=pointer]
+            - generic [ref=f2e1178] [cursor=pointer]
+            - generic [ref=f2e1179] [cursor=pointer]
+            - generic [ref=f2e1180] [cursor=pointer]
+            - generic [ref=f2e1181] [cursor=pointer]
+            - generic [ref=f2e1182] [cursor=pointer]
+            - generic [ref=f2e1183] [cursor=pointer]
+            - generic [ref=f2e1184] [cursor=pointer]
+            - generic [ref=f2e1185] [cursor=pointer]
+            - generic [ref=f2e1186] [cursor=pointer]
+            - generic [ref=f2e1187] [cursor=pointer]
+            - generic [ref=f2e1188] [cursor=pointer]
+            - generic [ref=f2e1189] [cursor=pointer]
+            - generic [ref=f2e1190] [cursor=pointer]
+            - generic [ref=f2e1191] [cursor=pointer]
+            - generic [ref=f2e1192] [cursor=pointer]
+            - generic [ref=f2e1193] [cursor=pointer]
+            - generic [ref=f2e1194] [cursor=pointer]
+            - generic [ref=f2e1195] [cursor=pointer]
+            - generic [ref=f2e1196] [cursor=pointer]
+            - generic [ref=f2e1197] [cursor=pointer]
+            - generic [ref=f2e1198] [cursor=pointer]
+            - generic [ref=f2e1199] [cursor=pointer]
+            - generic [ref=f2e1200] [cursor=pointer]
+            - generic [ref=f2e1201] [cursor=pointer]
+            - generic [ref=f2e1202] [cursor=pointer]
+            - generic [ref=f2e1203] [cursor=pointer]
+            - generic [ref=f2e1204] [cursor=pointer]
+            - generic [ref=f2e1205] [cursor=pointer]
+            - generic [ref=f2e1206] [cursor=pointer]
+            - generic [ref=f2e1207] [cursor=pointer]
+            - generic [ref=f2e1208] [cursor=pointer]
+            - generic [ref=f2e1209] [cursor=pointer]
+            - generic [ref=f2e1210] [cursor=pointer]
+            - generic [ref=f2e1211] [cursor=pointer]
+            - generic [ref=f2e1212] [cursor=pointer]
+            - generic [ref=f2e1213] [cursor=pointer]
+            - generic [ref=f2e1214] [cursor=pointer]
+            - generic [ref=f2e1215] [cursor=pointer]
+            - generic [ref=f2e1216] [cursor=pointer]
+          - list [ref=f2e1217]:
+            - button "Grass Free" [ref=f2e1218] [cursor=pointer]:
+              - generic [ref=f2e1227]: Grass
+              - generic [ref=f2e1228]: Free
+            - button "Road $20" [ref=f2e1229] [cursor=pointer]:
+              - generic [ref=f2e1237]: Road
+              - generic [ref=f2e1238]: $20
+            - button "Flowers $10" [ref=f2e1239] [cursor=pointer]:
+              - generic [ref=f2e1255]: Flowers
+              - generic [ref=f2e1256]: $10
+            - button "Tree $15" [ref=f2e1257] [cursor=pointer]:
+              - generic [ref=f2e1272]: Tree
+              - generic [ref=f2e1273]: $15
+            - button "Bush $12" [ref=f2e1274] [cursor=pointer]:
+              - generic [ref=f2e1286]: Bush
+              - generic [ref=f2e1287]: $12
+            - button "Fence $8" [ref=f2e1288] [cursor=pointer]:
+              - generic [ref=f2e1320]: Fence
+              - generic [ref=f2e1321]: $8
+            - button "Pond $60" [ref=f2e1322] [cursor=pointer]:
+              - generic [ref=f2e1331]: Pond
+              - generic [ref=f2e1332]: $60
+            - button "Small house $120" [ref=f2e1333] [cursor=pointer]:
+              - generic [ref=f2e1350]: Small house
+              - generic [ref=f2e1351]: $120
+            - button "Cottage $180" [ref=f2e1352] [cursor=pointer]:
+              - generic [ref=f2e1372]: Cottage
+              - generic [ref=f2e1373]: $180
+            - button "Shop $250" [ref=f2e1374] [cursor=pointer]:
+              - generic [ref=f2e1395]: Shop
+              - generic [ref=f2e1396]: $250
+            - button "Café $300" [ref=f2e1397] [cursor=pointer]:
+              - generic [ref=f2e1419]: Café
+              - generic [ref=f2e1420]: $300
+            - button "Bakery $320" [ref=f2e1421] [cursor=pointer]:
+              - generic [ref=f2e1445]: Bakery
+              - generic [ref=f2e1446]: $320
+            - button "Fountain $400" [ref=f2e1447] [cursor=pointer]:
+              - generic [ref=f2e1464]: Fountain
+              - generic [ref=f2e1465]: $400
+            - button "Playground $450" [ref=f2e1466] [cursor=pointer]:
+              - generic [ref=f2e1484]: Playground
+              - generic [ref=f2e1485]: $450
+            - button "School $600" [ref=f2e1486] [cursor=pointer]:
+              - generic [ref=f2e1514]: School
+              - generic [ref=f2e1515]: $600
+            - button "Library $650" [ref=f2e1516] [cursor=pointer]:
+              - generic [ref=f2e1549]: Library
+              - generic [ref=f2e1550]: $650
+            - button "Hospital $900" [ref=f2e1551] [cursor=pointer]:
+              - generic [ref=f2e1583]: Hospital
+              - generic [ref=f2e1584]: $900
+            - button "Fire station $800" [ref=f2e1585] [cursor=pointer]:
+              - generic [ref=f2e1607]: Fire station
+              - generic [ref=f2e1608]: $800
+            - button "Stadium $2,000" [ref=f2e1609] [cursor=pointer]:
+              - generic [ref=f2e1625]: Stadium
+              - generic [ref=f2e1626]: $2,000
+            - button "Ferris wheel $2,500" [ref=f2e1627] [cursor=pointer]:
+              - generic [ref=f2e1652]: Ferris wheel
+              - generic [ref=f2e1653]: $2,500
+            - button "Skyscraper $3,500" [ref=f2e1654] [cursor=pointer]:
+              - generic [ref=f2e1697]: Skyscraper
+              - generic [ref=f2e1698]: $3,500
+            - button "Castle $6,000" [ref=f2e1699] [cursor=pointer]:
+              - generic [ref=f2e1730]: Castle
+              - generic [ref=f2e1731]: $6,000
+            - button "Billboard $150" [ref=f2e1732] [cursor=pointer]:
+              - generic [ref=f2e2001]: Billboard
+              - generic [ref=f2e2002]: $150
+        - generic [ref=f2e2004]:
+          - generic [ref=f2e2005]:
+            - heading "🎨 Paint Studio" [level=2] [ref=f2e2006]
+            - textbox "Painting name" [active] [ref=f2e2007]:
+              - /placeholder: Name your painting
+            - button "Gallery" [ref=f2e2008] [cursor=pointer]
+            - button "Save" [ref=f2e2009] [cursor=pointer]
+            - button "Done" [ref=f2e2010] [cursor=pointer]
+          - generic [ref=f2e2011]:
+            - generic "Pixel canvas" [ref=f2e2013]
+            - generic [ref=f2e2014]:
+              - group "Colors" [ref=f2e2015]:
+                - button "White" [ref=f2e2016] [cursor=pointer]
+                - button "Ink" [ref=f2e2017] [cursor=pointer]
+                - button "Coral" [ref=f2e2018] [cursor=pointer]
+                - button "Orange" [ref=f2e2019] [cursor=pointer]
+                - button "Gold" [ref=f2e2020] [cursor=pointer]
+                - button "Grass" [ref=f2e2021] [cursor=pointer]
+                - button "Mint" [ref=f2e2022] [cursor=pointer]
+                - button "Sky" [ref=f2e2023] [cursor=pointer]
+                - button "Blue" [ref=f2e2024] [cursor=pointer]
+                - button "Violet" [ref=f2e2025] [cursor=pointer]
+                - button "Dirt" [ref=f2e2026] [cursor=pointer]
+                - button "Stone" [ref=f2e2027] [cursor=pointer]
+              - group "Tools" [ref=f2e2028]:
+                - button "Pencil" [ref=f2e2029] [cursor=pointer]: ✏️
+                - button "Fill bucket" [ref=f2e2030] [cursor=pointer]: 🪣
+                - button "Eraser" [ref=f2e2031] [cursor=pointer]: 🧽
+                - button "Undo" [ref=f2e2032] [cursor=pointer]: ↩️
+                - button "Clear" [ref=f2e2033] [cursor=pointer]: 🗑️
+    - contentinfo: v1 · Nov 16
+  - button "test" [ref=f2e773] [cursor=pointer]

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Boomtown">
+<meta name="theme-color" content="#6ec6ff">
+<title>Boomtown USA</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%236ec6ff'/%3E%3Crect x='8' y='40' width='48' height='16' fill='%235fcf5a'/%3E%3Crect x='14' y='22' width='20' height='22' fill='%238b5a2b'/%3E%3Crect x='34' y='12' width='18' height='32' fill='%238d99a6'/%3E%3Crect x='38' y='18' width='4' height='4' fill='%23ffcf3f'/%3E%3Crect x='46' y='18' width='4' height='4' fill='%23ffcf3f'/%3E%3Crect x='38' y='28' width='4' height='4' fill='%23ffcf3f'/%3E%3Crect x='46' y='28' width='4' height='4' fill='%23ffcf3f'/%3E%3Ccircle cx='54' cy='10' r='6' fill='%23ffcf3f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="topbar-left">
+      <div id="topbar-avatar" class="avatar-sm" aria-hidden="true"></div>
+      <div id="topbar-name" class="topbar-name">Boomtown</div>
+    </div>
+    <div class="topbar-right">
+      <div id="topbar-money" class="pill gold" title="Money">$0</div>
+      <div id="topbar-streak" class="pill mint" title="Day streak">0 days</div>
+      <button id="btn-parent" class="btn btn-sm stone" type="button" aria-label="Parent report (hold)">Parent</button>
+    </div>
+  </header>
+
+  <main id="screens">
+    <section class="screen" id="screen-home">
+      <div class="home">
+        <div class="home-scene">
+          <div id="home-house" class="home-house" aria-hidden="true"><svg viewBox="0 0 120 100" width="100%">
+            <rect x="20" y="45" width="80" height="50" fill="#c98a4b"/>
+            <rect x="20" y="45" width="80" height="6" fill="#a56d35"/>
+            <polygon points="10,48 60,10 110,48" fill="#ff6b6b"/>
+            <polygon points="10,48 60,10 60,16 18,48" fill="#e05555"/>
+            <rect x="52" y="65" width="18" height="30" fill="#8b5a2b"/>
+            <rect x="30" y="58" width="14" height="14" fill="#6ec6ff"/>
+            <rect x="78" y="58" width="14" height="14" fill="#6ec6ff"/>
+            <rect x="0" y="92" width="120" height="8" fill="#5fcf5a"/>
+          </svg></div>
+          <div id="home-avatar" class="home-avatar" aria-hidden="true"></div>
+        </div>
+        <h1 class="home-title">Boomtown <span class="usa">USA</span></h1>
+        <div class="home-right">
+        <div class="home-stats hud">
+          <span id="home-money" class="pill gold">$0</span>
+          <span id="home-streak" class="pill mint">0 day streak</span>
+          <span id="home-day" class="pill sky">Day 1</span>
+        </div>
+        <button class="btn btn-big gold" id="btn-work" type="button">Go to work</button>
+        <div class="grid home-nav">
+          <button class="btn grass" type="button" data-go="town">Town</button>
+          <button class="btn violet" type="button" data-go="shop">Shop</button>
+          <button class="btn coral" type="button" data-go="bookstop">Bookshelf</button>
+          <button class="btn stone" type="button" data-go="settings">Settings</button>
+        </div>
+        </div>
+      </div>
+    </section>
+    <section class="screen" id="screen-character"></section>
+    <section class="screen" id="screen-jobs"></section>
+    <section class="screen" id="screen-round"></section>
+    <section class="screen" id="screen-break"></section>
+    <section class="screen" id="screen-payday"></section>
+    <section class="screen" id="screen-bookstop"></section>
+    <section class="screen" id="screen-town"></section>
+    <section class="screen" id="screen-shop"></section>
+    <section class="screen" id="screen-report"></section>
+    <section class="screen" id="screen-settings"></section>
+  </main>
+
+  <footer class="ver">v1 · Nov 16</footer>
+</div>
+<div id="toasts" aria-live="polite"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<script src="js/core.js"></script>
+<script src="js/sfx.js"></script>
+<script src="js/data/states.js"></script>
+<script src="js/usmap.js"></script>
+<script src="js/character.js"></script>
+<script src="js/data/jobs.js"></script>
+<script src="js/jobs.js"></script>
+<script src="js/session.js"></script>
+<script src="js/rounds/money.js"></script>
+<script src="js/data/passages.js"></script>
+<script src="js/rounds/reading.js"></script>
+<script src="js/data/words.js"></script>
+<script src="js/rounds/words.js"></script>
+<script src="js/data/science.js"></script>
+<script src="js/rounds/science.js"></script>
+<script src="js/rounds/geography.js"></script>
+<script src="js/data/logic.js"></script>
+<script src="js/rounds/logic.js"></script>
+<script src="js/rounds/writing.js"></script>
+<script src="js/rounds/design.js"></script>
+<script src="js/town.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/minigames/blockstack.js"></script>
+<script src="js/minigames/minerush.js"></script>
+<script src="js/minigames/delivery.js"></script>
+<script src="js/minigames/coinrain.js"></script>
+<script src="js/minigames/painter.js"></script>
+<script src="js/data/books.js"></script>
+<script src="js/bookstop.js"></script>
+<script src="js/report.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/main.js"></script>
+<script>
+// Home screen shows the home she lives in (BT.shop.homes), not the hard-coded starter house.
+(function () {
+  function drawHome() {
+    var box = document.getElementById('home-house'), BT = window.BT;
+    var item = BT && BT.shop && BT.shop.item && BT.shop.item('homes', BT.state.home);
+    if (box && item && item.draw && box.dataset.home !== item.id) { box.innerHTML = item.draw(); box.dataset.home = item.id; }
+  }
+  document.addEventListener('bt:screen', function (e) { if (e.detail.id === 'home') drawHome(); });
+  document.addEventListener('bt:hud', drawHome);
+  drawHome();
+  if (window.BT && BT.registerChecks) BT.registerChecks('home-scene', [
+    { name: 'home scene follows BT.state.home', fn: function () {
+      var keep = BT.state.home; BT.state.home = 'mansion'; drawHome();
+      var ok = document.getElementById('home-house').dataset.home === 'mansion' && document.getElementById('home-house').querySelector('svg');
+      BT.state.home = keep; drawHome(); return !!ok && document.getElementById('home-house').dataset.home === keep;
+    } }
+  ]);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]: Boomtown
+    - generic [ref=e13]:
+      - generic "Money" [ref=e14]: $0
+      - generic "Day streak" [ref=e15]: 1 day
+      - button "Parent report (hold)" [ref=e16] [cursor=pointer]: Parent
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "Make your character" [level=2] [ref=e21]
+        - button "Start!" [ref=e23] [cursor=pointer]
+      - generic [ref=e24]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: Name
+          - textbox "Character name" [ref=e49]:
+            - /placeholder: Your name here
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - heading "Skin" [level=3] [ref=e52]
+            - radiogroup "Skin" [ref=e53]:
+              - button "Skin tone 1" [ref=e54] [cursor=pointer]
+              - button "Skin tone 2" [ref=e56] [cursor=pointer]
+              - button "Skin tone 3" [ref=e58] [cursor=pointer]
+              - button "Skin tone 4" [ref=e60] [cursor=pointer]
+              - button "Skin tone 5" [ref=e62] [cursor=pointer]
+              - button "Skin tone 6" [ref=e64] [cursor=pointer]
+          - generic [ref=e66]:
+            - heading "Hair" [level=3] [ref=e67]
+            - radiogroup "Hair" [ref=e68]:
+              - 'button "Hair: short" [ref=e69] [cursor=pointer]'
+              - 'button "Hair: long" [ref=e90] [cursor=pointer]'
+              - 'button "Hair: ponytail" [ref=e112] [cursor=pointer]'
+              - 'button "Hair: buns" [ref=e135] [cursor=pointer]'
+              - 'button "Hair: spiky" [ref=e158] [cursor=pointer]'
+              - 'button "Hair: curly" [ref=e180] [cursor=pointer]'
+          - generic [ref=e207]:
+            - heading "Hair color" [level=3] [ref=e208]
+            - radiogroup "Hair color" [ref=e209]:
+              - button "Hair color 1" [ref=e210] [cursor=pointer]
+              - button "Hair color 2" [ref=e212] [cursor=pointer]
+              - button "Hair color 3" [ref=e214] [cursor=pointer]
+              - button "Hair color 4" [ref=e216] [cursor=pointer]
+              - button "Hair color 5" [ref=e218] [cursor=pointer]
+              - button "Hair color 6" [ref=e220] [cursor=pointer]
+          - generic [ref=e222]:
+            - heading "Eyes" [level=3] [ref=e223]
+            - radiogroup "Eyes" [ref=e224]:
+              - 'button "Eyes: round" [ref=e225] [cursor=pointer]'
+              - 'button "Eyes: happy" [ref=e246] [cursor=pointer]'
+              - 'button "Eyes: wide" [ref=e265] [cursor=pointer]'
+              - 'button "Eyes: wink" [ref=e286] [cursor=pointer]'
+          - generic [ref=e306]:
+            - heading "Outfit" [level=3] [ref=e307]
+            - radiogroup "Outfit" [ref=e308]:
+              - 'button "Outfit: Tee + jeans" [ref=e309] [cursor=pointer]'
+              - 'button "Outfit: Cozy sweater" [ref=e330] [cursor=pointer]'
+              - 'button "Outfit: Sun dress" [ref=e354] [cursor=pointer]'
+              - 'button "Outfit: Overalls" [ref=e376] [cursor=pointer]'
+              - 'button "Outfit: Team jersey" [ref=e400] [cursor=pointer]':
+                - img [aria-hidden] [ref=e401]:
+                  - generic [ref=e411]: "10"
+              - 'button "Outfit: Boss suit" [ref=e421] [cursor=pointer]'
+          - generic [ref=e444]:
+            - heading "Accessory" [level=3] [ref=e445]
+            - radiogroup "Accessory" [ref=e446]:
+              - 'button "Accessory: none" [ref=e447] [cursor=pointer]':
+                - generic [ref=e448]: —
+              - 'button "Accessory: glasses" [ref=e449] [cursor=pointer]'
+              - 'button "Accessory: cap" [ref=e473] [cursor=pointer]'
+              - 'button "Accessory: crown" [ref=e497] [cursor=pointer]'
+              - 'button "Accessory: headphones" [ref=e520] [cursor=pointer]'
+              - 'button "Accessory: bow" [ref=e544] [cursor=pointer]'
+          - generic [ref=e568]:
+            - heading "Home state (tap the map)" [level=3] [ref=e569]
+            - paragraph [ref=e570]: "Home: Texas"
+            - img "Map of the United States" [ref=e572]:
+              - generic "Alabama" [ref=e573] [cursor=pointer]: AL
+              - generic "Alaska" [ref=e577] [cursor=pointer]: AK
+              - generic "Arizona" [ref=e581] [cursor=pointer]: AZ
+              - generic "Arkansas" [ref=e585] [cursor=pointer]: AR
+              - generic "California" [ref=e589] [cursor=pointer]: CA
+              - generic "Colorado" [ref=e593] [cursor=pointer]: CO
+              - generic "Connecticut" [ref=e597] [cursor=pointer]: CT
+              - generic "Delaware" [ref=e601] [cursor=pointer]: DE
+              - generic "Florida" [ref=e605] [cursor=pointer]: FL
+              - generic "Georgia" [ref=e609] [cursor=pointer]: GA
+              - generic "Hawaii" [ref=e613] [cursor=pointer]: HI
+              - generic "Idaho" [ref=e617] [cursor=pointer]: ID
+              - generic "Illinois" [ref=e621] [cursor=pointer]: IL
+              - generic "Indiana" [ref=e625] [cursor=pointer]: IN
+              - generic "Iowa" [ref=e629] [cursor=pointer]: IA
+              - generic "Kansas" [ref=e633] [cursor=pointer]: KS
+              - generic "Kentucky" [ref=e637] [cursor=pointer]: KY
+              - generic "Louisiana" [ref=e641] [cursor=pointer]: LA
+              - generic "Maine" [ref=e645] [cursor=pointer]: ME
+              - generic "Maryland" [ref=e649] [cursor=pointer]: MD
+              - generic "Massachusetts" [ref=e653] [cursor=pointer]: MA
+              - generic "Michigan" [ref=e657] [cursor=pointer]: MI
+              - generic "Minnesota" [ref=e661] [cursor=pointer]: MN
+              - generic "Mississippi" [ref=e665] [cursor=pointer]: MS
+              - generic "Missouri" [ref=e669] [cursor=pointer]: MO
+              - generic "Montana" [ref=e673] [cursor=pointer]: MT
+              - generic "Nebraska" [ref=e677] [cursor=pointer]: NE
+              - generic "Nevada" [ref=e681] [cursor=pointer]: NV
+              - generic "New Hampshire" [ref=e685] [cursor=pointer]: NH
+              - generic "New Jersey" [ref=e689] [cursor=pointer]: NJ
+              - generic "New Mexico" [ref=e693] [cursor=pointer]: NM
+              - generic "New York" [ref=e697] [cursor=pointer]: NY
+              - generic "North Carolina" [ref=e701] [cursor=pointer]: NC
+              - generic "North Dakota" [ref=e705] [cursor=pointer]: ND
+              - generic "Ohio" [ref=e709] [cursor=pointer]: OH
+              - generic "Oklahoma" [ref=e713] [cursor=pointer]: OK
+              - generic "Oregon" [ref=e717] [cursor=pointer]: OR
+              - generic "Pennsylvania" [ref=e721] [cursor=pointer]: PA
+              - generic "Rhode Island" [ref=e725] [cursor=pointer]: RI
+              - generic "South Carolina" [ref=e729] [cursor=pointer]: SC
+              - generic "South Dakota" [ref=e733] [cursor=pointer]: SD
+              - generic "Tennessee" [ref=e737] [cursor=pointer]: TN
+              - generic "Texas" [ref=e741] [cursor=pointer]: TX
+              - generic "Utah" [ref=e745] [cursor=pointer]: UT
+              - generic "Vermont" [ref=e749] [cursor=pointer]: VT
+              - generic "Virginia" [ref=e753] [cursor=pointer]: VA
+              - generic "Washington" [ref=e757] [cursor=pointer]: WA
+              - generic "West Virginia" [ref=e761] [cursor=pointer]: WV
+              - generic "Wisconsin" [ref=e765] [cursor=pointer]: WI
+              - generic "Wyoming" [ref=e769] [cursor=pointer]: WY
+  - contentinfo: v1 · Nov 16

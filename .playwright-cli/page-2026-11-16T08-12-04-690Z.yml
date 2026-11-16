@@ -1,0 +1,39 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - banner [ref=f6e3]:
+      - generic [ref=f6e4]: Tester
+      - generic [ref=f6e13]:
+        - generic "Money" [ref=f6e14]: $250
+        - generic "Day streak" [ref=f6e15]: 1 day
+        - button "Parent report (hold)" [ref=f6e16] [cursor=pointer]: Parent
+    - main [ref=f6e17]:
+      - generic [ref=f6e56]:
+        - generic [ref=f6e57]:
+          - heading "Settings" [level=2] [ref=f6e58]
+          - button "Back" [ref=f6e59] [cursor=pointer]
+        - generic [ref=f6e60]:
+          - generic [ref=f6e61]:
+            - heading "Sound" [level=3] [ref=f6e62]
+            - switch "Sound effects" [ref=f6e63] [cursor=pointer]
+          - generic [ref=f6e66]:
+            - heading "Character" [level=3] [ref=f6e67]
+            - button "Edit character" [ref=f6e68] [cursor=pointer]
+          - generic [ref=f6e69]:
+            - heading "Save code" [level=3] [ref=f6e70]
+            - paragraph [ref=f6e71]: "Move your game to another iPad: copy the code here, paste it there."
+            - generic [ref=f6e72]:
+              - button "Show save code" [ref=f6e73] [cursor=pointer]
+              - button "Copy save code" [ref=f6e74] [cursor=pointer]
+            - generic [ref=f6e75]:
+              - textbox "Paste save code" [ref=f6e76]:
+                - /placeholder: Paste a save code here
+              - button "Import save code" [ref=f6e77] [cursor=pointer]
+          - generic [ref=f6e78]:
+            - heading "Reset progress" [level=3] [ref=f6e79]
+            - paragraph [ref=f6e80]: Erases everything on this device. Copy the save code first if you might want it back.
+            - textbox "Type RESET" [ref=f6e81]:
+              - /placeholder: Type RESET to confirm
+            - button "Reset progress" [ref=f6e82] [cursor=pointer]
+          - paragraph [ref=f6e83]: Boomtown USA v1 · Nov 16
+    - contentinfo: v1 · Nov 16
+  - button "test" [ref=f6e49] [cursor=pointer]

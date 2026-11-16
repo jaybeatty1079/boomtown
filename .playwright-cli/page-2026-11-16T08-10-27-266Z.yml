@@ -1,0 +1,17 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - banner [ref=f2e3]:
+      - generic [ref=f2e4]: Boomtown
+      - generic [ref=f2e13]:
+        - generic "Money" [ref=f2e14]: $0
+        - generic "Day streak" [ref=f2e15]: 1 day
+        - button "Parent report (hold)" [ref=f2e16] [cursor=pointer]: Parent
+    - main [ref=f2e17]:
+      - generic [ref=f2e20]:
+        - heading "Make your character" [level=2] [ref=f2e21]
+        - paragraph [ref=f2e22]: The full creator is on its way. For now, pick a name.
+        - textbox "Character name" [ref=f2e23]:
+          - /placeholder: Your character’s name
+        - button "Start" [ref=f2e24] [cursor=pointer]
+    - contentinfo: v1 · Nov 16
+  - button "test" [ref=f2e25] [cursor=pointer]

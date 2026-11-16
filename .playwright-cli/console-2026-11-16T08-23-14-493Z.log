@@ -1,0 +1,2 @@
+[   23250ms] TypeError: Cannot read properties of null (reading 'answer')
+    at http://localhost:8781/js/rounds/words.js:181:28

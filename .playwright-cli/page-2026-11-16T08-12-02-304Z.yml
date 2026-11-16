@@ -1,0 +1,24 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - banner [ref=f6e3]:
+      - generic [ref=f6e4]: Tester
+      - generic [ref=f6e13]:
+        - generic "Money" [ref=f6e14]: $250
+        - generic "Day streak" [ref=f6e15]: 1 day
+        - button "Parent report (hold)" [ref=f6e16] [cursor=pointer]: Parent
+    - main [ref=f6e17]:
+      - generic [ref=f6e19]:
+        - heading "Boomtown USA" [level=1] [ref=f6e37]
+        - generic [ref=f6e38]:
+          - generic [ref=f6e39]:
+            - generic [ref=f6e40]: $250
+            - generic [ref=f6e41]: 1 day streak
+            - generic [ref=f6e42]: Day 1
+          - button "Go to work" [ref=f6e43] [cursor=pointer]
+          - generic [ref=f6e44]:
+            - button "Town" [ref=f6e45] [cursor=pointer]
+            - button "Shop" [ref=f6e46] [cursor=pointer]
+            - button "Bookshelf" [ref=f6e47] [cursor=pointer]
+            - button "Settings" [ref=f6e48] [cursor=pointer]
+    - contentinfo: v1 · Nov 16
+  - button "test" [ref=f6e49] [cursor=pointer]
